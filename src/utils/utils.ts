@@ -120,7 +120,7 @@ export const findSelection = (startPoint: string, hooverPoint: string): string[]
     }
     if (verticalStep.step === 0) {
         totalSteps = horizontalStep.step;
-    };
+    }
     const shiftObj = {
         dirH: horizontalStep.direction,
         dirV: verticalStep.direction,
@@ -134,8 +134,8 @@ export const findSelection = (startPoint: string, hooverPoint: string): string[]
         const col = startCol + shiftObj.dirV * shiftObj.stepV * i;
         points.push(`${row},${col}`);
     }
-    // if (shiftObj.dirH === -1 || shiftObj.dirV === -1) {
-    //     points = points.reverse();
-    // }
+    if (shiftObj.dirH === -1 || shiftObj.dirV === -1) {
+        points = points.reverse();
+    }
     return points;
 }
